@@ -16,7 +16,7 @@ class RtpPacket:
         header = bytearray(HEADER_SIZE)
 
         # --------------
-        # TO COMPLETE
+        # COMPLETED
         # --------------
         
         # Fill the header bytearray with RTP header fields
