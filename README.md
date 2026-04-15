@@ -15,3 +15,8 @@ openRtpPort
 - Set the timeout value of the socket
 - Bind the socket to the address using the RTP port given by the client 
 
+### RtpPacket.py
+encode
+- Fill the header bytearray with RTP header fields
+- Store teh constructed header in the object
+- Get the payload from the argument
