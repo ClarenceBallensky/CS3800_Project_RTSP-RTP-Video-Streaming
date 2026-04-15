@@ -152,47 +152,51 @@ class Client:
         # Setup request
         if requestCode == self.SETUP and self.state == self.INIT:
             threading.Thread(target=self.recvRtspReply).start()
-        # Update RTSP sequence number.
-        # ...
+        
+            # Update RTSP sequence number.
+            self.rtspSeq += 1 
 
-        # Write the RTSP request to be sent.
-        # request = ...
+            # Write the RTSP request to be sent.
+            # request = ...
 
-        # Keep track of the sent request.
-        # self.requestSent = ...
+            # Keep track of the sent request.
+            # self.requestSent = ...
 
         # Play request
         elif requestCode == self.PLAY and self.state == self.READY:
-        # Update RTSP sequence number.
-        # ...
+        
+            # Update RTSP sequence number.
+            self.rtspSeq += 1 
 
-        # Write the RTSP request to be sent.
-        # request = ...
+            # Write the RTSP request to be sent.
+            # request = ...
 
-        # Keep track of the sent request.
-        # self.requestSent = ...
+            # Keep track of the sent request.
+            # self.requestSent = ...
 
         # Pause request
         elif requestCode == self.PAUSE and self.state == self.PLAYING:
-        # Update RTSP sequence number.
-        # ...
 
-        # Write the RTSP request to be sent.
-        # request = ...
+            # Update RTSP sequence number.
+            self.rtspSeq += 1 
 
-        # Keep track of the sent request.
-        # self.requestSent = ...
+            # Write the RTSP request to be sent.
+            # request = ...
+
+            # Keep track of the sent request.
+            # self.requestSent = ...
 
         # Teardown request
         elif requestCode == self.TEARDOWN and not self.state == self.INIT:
-        # Update RTSP sequence number.
-        # ...
+            
+            # Update RTSP sequence number.
+            self.rtspSeq += 1
 
-        # Write the RTSP request to be sent.
-        # request = ...
+            # Write the RTSP request to be sent.
+            # request = ...
 
-        # Keep track of the sent request.
-        # self.requestSent = ...
+            # Keep track of the sent request.
+            # self.requestSent = ...
         else:
             return
 
