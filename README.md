@@ -1,2 +1,2 @@
-# CS4080_Project_RTSP-RTP-Video-Streaming
+# CS3800_Project_RTSP-RTP-Video-Streaming
 
