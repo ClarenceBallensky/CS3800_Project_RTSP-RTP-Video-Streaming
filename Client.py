@@ -205,12 +205,12 @@ class Client:
 
             # Keep track of the sent request.
             self.requestSent = self.TEARDOWN
-            
+
         else:
             return
 
         # Send the RTSP request using rtspSocket.
-        # ...
+        self.rtspSocket.send(request.encode())
 
         print('\nData sent:\n' + request)
 
