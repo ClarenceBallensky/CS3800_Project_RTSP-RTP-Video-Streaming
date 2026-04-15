@@ -162,7 +162,7 @@ class Client:
                       "Transport: RTP/UDP; client_port= " + str(self.rtpPort) + "\n\n"
 
             # Keep track of the sent request.
-            # self.requestSent = ...
+            self.requestSent = self.SETUP
 
         # Play request
         elif requestCode == self.PLAY and self.state == self.READY:
@@ -176,7 +176,7 @@ class Client:
                       "Session: " + str(self.sessionId) + "\n\n"
 
             # Keep track of the sent request.
-            # self.requestSent = ...
+            self.requestSent = self.PLAY
 
         # Pause request
         elif requestCode == self.PAUSE and self.state == self.PLAYING:
@@ -190,7 +190,7 @@ class Client:
                       "Session: " + str(self.sessionId) + "\n\n"
 
             # Keep track of the sent request.
-            # self.requestSent = ...
+            self.requestSent = self.PAUSE
 
         # Teardown request
         elif requestCode == self.TEARDOWN and not self.state == self.INIT:
@@ -204,7 +204,8 @@ class Client:
                       "Session: " + str(self.sessionId) + "\n\n"
 
             # Keep track of the sent request.
-            # self.requestSent = ...
+            self.requestSent = self.TEARDOWN
+            
         else:
             return
 
