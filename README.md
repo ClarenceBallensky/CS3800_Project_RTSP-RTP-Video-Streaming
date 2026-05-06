@@ -1,4 +1,13 @@
 # RTSP/RTP Video Streaming
+Implemented an RTSP/RTP-based video streaming client with support for control signaling, state management, and real-time packet handling.
+
+## Features
+* RTSP request handling (SETUP, PLAY, PAUSE, TEARDOWN)
+* RTP packet decoding and video frame reconstruction
+* Real-time video streaming over UDP
+* Client-side state management
+* Synchronization between RTSP control flow and RTP data stream
+
 ## My Contributions
 ### Client.py
 sendRtspRequest
@@ -11,24 +20,37 @@ parseRtspReply
 - For each sent request: update RTSP state
 
 openRtpPort
-- Create a new datagram socke to receive RTP packets from the server
+- Create a new datagram socket to receive RTP packets from the server
 - Set the timeout value of the socket
 - Bind the socket to the address using the RTP port given by the client 
 
 ### RtpPacket.py
 encode
 - Fill the header bytearray with RTP header fields
-- Store teh constructed header in the object
+- Store the constructed header in the object
 - Get the payload from the argument
 
-## Setup
-- 2 Windows PowerShell terminals
-`cd C:\Users\prize\.vscode\CS3800_Project_RTSP-RTP-Video-Streaming`
+## How to Run
+Tested on Python version 3.14.4
 
-### Server
-`python Server.py 8554`
-<img width="1068" height="56" alt="image" src="https://github.com/user-attachments/assets/45eeeb64-2d07-4b41-857c-42cbf65907d5" />
-### Client 
-`python ClientLauncher.py 127.0.0.1 8554 5005 movie.Mjpeg`
-<img width="1487" height="66" alt="image" src="https://github.com/user-attachments/assets/d7413350-1fa2-42a9-8cf3-f7ae2c1ed930" />
+**To begin:**
+1. Clone this GitHub Repository
+2. Open two terminals on your machine 
+3. For each terminal: navigate to the project directory using the `cd` command 
+
+### Run the Server
+Terminal 1:
+```python Server.py server_port```
+
+### Run the Client
+Terminal 2:
+```python ClientLauncher.py server_host server_port RTP_port video_file```
+
+**Argument descriptions:**
+- `server_host`: IP address of the server (e.g., 127.0.0.1 for localhost)
+- `server_port`: Port used for RTSP communication
+- `rtp_port`: Port used to receive RTP packets
+- `video_file`: Name of the video file (e.g., `movie.Mjpeg`)
+
+**Note:** the movie.Mjpeg video file is included in this repository for ease of testing
 
