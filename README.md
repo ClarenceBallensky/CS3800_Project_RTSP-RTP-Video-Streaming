@@ -1,14 +1,14 @@
 # RTSP/RTP Video Streaming
 Implemented an RTSP/RTP-based video streaming client with support for control signaling, state management, and real-time packet handling.
 
-## Features
+## 🌟Features
 * RTSP request handling (SETUP, PLAY, PAUSE, TEARDOWN)
 * RTP packet decoding and video frame reconstruction
 * Real-time video streaming over UDP
 * Client-side state management
 * Synchronization between RTSP control flow and RTP data stream
 
-## My Contributions
+## ✏️My Contributions
 ### Client.py
 sendRtspRequest
 - For each button:
@@ -30,7 +30,7 @@ encode
 - Store the constructed header in the object
 - Get the payload from the argument
 
-## How to Run
+## ⚙️How to Run
 Tested on Python version 3.14.4
 
 **To begin:**
@@ -53,4 +53,15 @@ Terminal 2:
 - `video_file`: Name of the video file (e.g., `movie.Mjpeg`)
 
 **Note:** the movie.Mjpeg video file is included in this repository for ease of testing
+
+## 💡What I Learned
+This project strengthened my ability to debug distributed systems, particularly in a networking context where multiple components must work together seamlessly.
+
+Key takeaways:
+- **Systematic debugging:** Even when both the client and server appear to be running, issues can still occur in the data path (e.g., RTP packets not being received), requiring step-by-step isolation of the failure.
+- **Environment and file dependencies:** Small setup issues—such as using the wrong working directory—can break functionality even when the code itself is correct.
+- **Networking pitfalls:** Connectivity issues can stem from incorrect IP addresses, firewall restrictions, or the client and server not being on the same network.
+- **Resource management:** Port-related errors often occur when previous processes are still running, which signifies the importance of properly shutting down sockets and cleaning up resources.
+
+Overall, this project taught me that debugging networked applications requires careful attention to both code and system-level details.
 
